@@ -5,11 +5,18 @@ import {
   useCallback,
 } from 'react';
 
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>{
+  name : string;
+  icon?: IconType;
+}
+
 import { useField } from '@unform/core';
 
 import { Container } from './styles';
+import { string } from 'yup';
+import {IconType} from 'react-icons'
 
-const Input = ({ name, icon: Icon, ...rest }) => {
+const Input = ({ name, icon: Icon, ...rest } : InputProps) => {
   const inputRef = useRef(null);
 
   const [isFocused, setIsFocused] = useState(false);

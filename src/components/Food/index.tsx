@@ -16,7 +16,7 @@ interface Food {
 interface FoodProps {
   food: Food,
   handleEditFood: (food: Food) => void,
-  handleDelete: (food: Food) => void
+  handleDelete: (id : number) => void
 
 }
 
@@ -65,7 +65,7 @@ export default function Food( {food, handleEditFood, handleDelete}: FoodProps) {
           <button
             type="button"
             className="icon"
-            onClick={() => handleDelete(food)}
+            onClick={() => handleDelete(food.id)}
             data-testid={`remove-food-${food.id}`}
           >
             <FiTrash size={20} />
