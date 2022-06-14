@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import {useState } from 'react';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
@@ -31,6 +31,8 @@ export default function Food( {food, handleEditFood, handleDelete}: FoodProps) {
       available: available,
     });
 
+    setAvailable(!available)
+
   }
 
   function setEditingFood(){
@@ -39,8 +41,7 @@ export default function Food( {food, handleEditFood, handleDelete}: FoodProps) {
   }
 
   return (
-    // <Container available={available}>
-    <Container>
+    <Container available={available}>
       <header>
         <img src={food.image} alt={food.name} />
       </header>
